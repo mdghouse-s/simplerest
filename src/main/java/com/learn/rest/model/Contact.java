@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Contact {
     private int contactId;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String mobile;
     private String email;
     private String category;

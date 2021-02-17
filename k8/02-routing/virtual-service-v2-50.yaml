@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: basicapi
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - basicapi-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /api
+      route:
+        - destination:
+            host: basicapiservice
+            subset: v1
+          weight: 50
+        - destination:
+            host: basicapiservice
+            subset: v2
+          weight: 50
