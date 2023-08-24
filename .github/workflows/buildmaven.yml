@@ -38,7 +38,7 @@ jobs:
       - name: create package
         run: mvn -B package -Dskiptests
       - name: upload package
-        uses: actions/upload@v3
+        uses: actions/upload-artifact@v3
         with:
           name: api-jar
           path: target
