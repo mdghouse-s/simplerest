@@ -1,0 +1,17 @@
+name: Build-deploy-api
+on:
+  push:
+    branches: 
+      - main
+      - master
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: run tests
+        run: mvn -B clean test
